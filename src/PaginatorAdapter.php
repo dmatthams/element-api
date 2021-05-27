@@ -137,7 +137,7 @@ class PaginatorAdapter implements PaginatorInterface
 
         // Return the URL with the page param
         $params[$this->pageParam] = $page;
-        return UrlHelper::url($request->getPathInfo(), $params);
+        return getenv('API_URL') . UrlHelper::rootRelativeUrl(UrlHelper::url($request->getPathInfo(), $params));
     }
 
     /**
